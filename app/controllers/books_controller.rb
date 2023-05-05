@@ -6,7 +6,7 @@ class BooksController < ApplicationController
   def create
     book = Book.new(book_params)
     book.save
-    redirect_to list_path(book.id)
+    redirect_to show_path(book.id)
   end
 
   def index
@@ -19,12 +19,12 @@ class BooksController < ApplicationController
 
   def edit
     @book = Book.find(params[:id])
-    book.save
-    redirect_to list_path(book.id)
   end
 
   def update
-
+    book = Book.find(params[:id])
+    book.update(book_params)
+    redirect_to show_path(book.id)
   end
 
   private
