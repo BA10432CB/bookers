@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   #delete 'books/:id' => 'books#destroy', as: 'destroy'
   get '/' => 'homes#top'
   resources :books
+  root to: 'homes#top'
 end
